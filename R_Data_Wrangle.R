@@ -108,4 +108,77 @@ result
 x <- 2
 log(x) #ln
 log2(x) #log2(2) 
+#convert text to number
+text <- '22'
+number = 2 + as.numeric(text)
+number
+
+#Data Conversion
+#convert number to text
+number = 22
+text = as.character(number)
+text
+
+#convert text to date
+#R format date YYYY-MM-DD
+#How to convert original format to R format 
+#Use % as seperator of day , month and year
+#Apply the format of orginal data such as - or / 
+#if the Month is not the numuriC format (eg, Jul ,Sep). To convert the month 
+#it needs %B instead of %m
+# Example of Date format
+# 20/02/2016 = "%d/%m/%y"
+# 20Feb2016 = "%d%B%y"
+
+DateFull <- c("25Jun1916", "26Jun2016", "28Jul2016")
+DateShort <- c("25/06/1916", "26/06/2016", "28/06/2016")
+DateFull2 <- c("25June1916","26Jun2016","28June2016")
+DateTest <- data.frame(DateFull,DateShort,DateFull2)
+DateTest
+ConvertDateFull <- as.Date(DateTest$DateFull , format = "%d%B%Y")
+ConvertDateShort <- as.Date(DateTest$DateShort, format = "%d/%m/%Y")
+ConvertDateFull2 <- as.Date(DateTest$DateFull , format = "%d%B%Y")
+DateTest <- data.frame(DateTest,ConvertDateFull,ConvertDateShort,ConvertDateFull2)
+DateTest
+
+#datedif
+start <- as.Date("2016-01-05", format = "%Y-%m-%d")
+end <- as.Date("2016-05-05", format = "%Y-%m-%d")
+diff_in_days = difftime(end, start, units = "days") # days
+diff_in_days
+
+#week dif
+diff_in_week  = difftime(end, start, units="weeks" )
+diff_in_week
+
+#hour dif
+diff_in_hour  = difftime(end, start, units="hours" ) #can change to secs , mins, hours,days ,week
+diff_in_hour
+
+#monthdif
+diff_in_month = diff_in_days/30
+diff_in_month
+
+#year dif
+diff_in_year = diff_in_days/365
+diff_in_year 
+
+
+library(lubridate)
+#dateadd 
+dateadd <- start + days(2)
+monthadd <- start +month(2)
+yearadd <- start - years(2)
+start
+dateadd
+monthadd
+yearadd
+
+#Extract Day, month, year
+start
+typeof(start)
+day(start)
+month(start)
+year(start)
+weekdays(start)
 
