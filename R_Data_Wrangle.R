@@ -182,3 +182,24 @@ month(start)
 year(start)
 weekdays(start)
 
+#if else
+A <- 10
+B <- 20
+if (A == 0 & B==20)
+{
+  C<- "Yes"
+  
+}  
+else {
+  C<- "No"
+}
+C
+
+
+#Loop
+#calculate 1+2...10
+n = 0
+for (i in 1:10){
+  n = n+i
+}
+n
