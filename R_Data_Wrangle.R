@@ -63,3 +63,49 @@ Text <= "This is test"
 Splitoutput <- strsplit(Text, ' ')
 Splitoutput
 
+
+#Calculating the number
+Name <- c("A","B","C", "D")
+Age <- c(10,20,23,22)
+
+#sum
+SumAge <- sum(Age)
+SumAge
+
+#Average
+AvgAge<- mean(Age)
+
+#Average not null data
+Age <- c(10,20,23,22,NA)
+mean(Age , na.rm = TRUE)
+
+#Max
+max(Age, na.rm = TRUE)
+min(Age, na.rm = TRUE)
+
+#minus
+A  <-10
+B <- 11
+C<- A-B
+
+#Multiply
+D<- A*B
+D
+#Divine
+E<- A/B
+E
+
+#square root
+sqrt(4)
+
+#n root
+rootn <- 3
+x <- 8
+result <- x^(1/rootn)
+result
+
+#log
+x <- 2
+log(x) #ln
+log2(x) #log2(2) 
+
